@@ -3,7 +3,7 @@ import json
 
 from httplib2 import Http
 
-from google.auth import default
+import google.auth
 from google.oauth2 import service_account
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
