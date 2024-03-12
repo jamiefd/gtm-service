@@ -3,7 +3,7 @@ import json
 
 from httplib2 import Http
 
-import google.auth
+from google.auth import default as google_auth_default
 from google.oauth2 import service_account
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
@@ -56,7 +56,7 @@ def get_credentials():
     from . import AUTH_SCOPES, CLIENT_SECRET_FILE, SERVICE_PRIVATE_KEY, HEADLESS_AUTH, CREDENTIALS_FILE_NAME
 
     try:
-        credentials, project = google.auth.default(scopes=AUTH_SCOPES)
+        credentials, project = google_auth_default(scopes=AUTH_SCOPES)
         if credentials:
             return credentials
     except DefaultCredentialsError:
